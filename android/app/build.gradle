@@ -165,6 +165,9 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    // for storybook dev menu
+    debugImplementation 'com.jakewharton:process-phoenix:2.1.2'
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

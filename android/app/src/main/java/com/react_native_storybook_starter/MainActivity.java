@@ -1,11 +1,27 @@
 package com.react_native_storybook_starter;
 
+import android.os.Bundle;
+
+import com.facebook.react.BuildConfig;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactActivityDelegate;
 
 public class MainActivity extends ReactActivity {
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    // null is for react-native-screens
+    super.onCreate(null);
+
+    if (BuildConfig.DEBUG) {
+      StorybookDevMenuOptionHandler.initDevMenuItem(
+              getApplicationContext(),
+              getReactInstanceManager().getDevSupportManager()
+      );
+    }
+  }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
