@@ -1,49 +1,43 @@
-A starter project with react native 0.68, @storybook/react-native 6.0 beta, storybook/addon-react-native-web
+## General 
+An example how to add a separate JS bundle entry point for RN Storybook and how to switch between entry points from the Dev Menu:
 
-![image](https://user-images.githubusercontent.com/3481514/145904252-92e3dc1e-591f-410f-88a1-b4250f4ba6f2.png)
+<div style="display:flex;">
 
-# getting started
+<img width="250" alt="iOS dev menu" src="https://user-images.githubusercontent.com/16039/232308884-0f015e13-afe1-47f4-b8ee-e888bf10d1e0.png">
 
-To get all the dependencies run
+<img width="240" alt="Android dev menu" src="https://user-images.githubusercontent.com/16039/232308885-3f8a66a1-5823-43ad-af46-0fa70ebb8ab0.png">
 
-```
-yarn install
-```
+</div>
 
-To run on the web use
+A separate entry point helps to ensure that application's bundle won't include any Storybook code.
 
-```
-yarn storybook
-```
+Also switching between Storybook and app is very straightforward and convenient and it's possible to keep the app and Storybook open in different Simulators / Emulators at the same time.
 
-To run on ios or android
+## How to use
 
-```
-yarn start
-```
+Check this diff:
+https://github.com/zubko/react-native-storybook-with-dev-menu/commit/7486060842a15d12ecdd5256f2fb0ddddc7e0e32 
 
-in another terminal run
+Generally the process is:
+1. Add Storybook JS bundle entry point
+2. For Android and iOS:
+    * Add extra files to the native projects
+    * Change the existing native files
 
-```
-yarn ios
-```
+## Thoughts
 
-or
+Probably it should be possible to move the code to a separate NPM package to make the integration a bit easier, but I'm lacking some knowledge of native Android module part of RN to get the `DevSupportManager` instance and application context in the module at the proper moment of time when they are constructed, so any suggestions are welcome. 
 
-```
-yarn android
-```
+Anyways, the decision of the JS entry point happens in the native app's code, so some manual changes to the native code of the app will be needed in any case.
 
-If you add new stories on the native (ondevice version) you either need to have the watcher running or run the stories loader
+# Credits
 
-To update the stories one time
+These packages helped with some native code ideas:
 
-```
-yarn update-stories
-```
+https://github.com/avishayil/react-native-restart
 
-To watch the stories files
+https://github.com/zoontek/react-native-dev-menu
 
-```
-yarn storybook-watcher
-```
+Also this article was quite helpful:
+
+https://medium.com/capriza-engineering/extending-react-natives-dev-menu-c084fc93717d
