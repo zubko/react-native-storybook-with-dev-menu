@@ -16,7 +16,7 @@ const config = {
   },
   resolver: {
     resolverMainFields: ['sbmodern', 'react-native', 'browser', 'main'],
-  }
+  },
 };
 
 module.exports = mergeConfig(getDefaultConfig(__dirname), config);

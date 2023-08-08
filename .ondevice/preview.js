@@ -1,5 +1,8 @@
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
+import '../styles/index.css';
+
 export const decorators = [withBackgrounds];
+
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
   controls: {
