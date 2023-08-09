@@ -3,9 +3,7 @@ import {SafeAreaView, Text, View} from 'react-native';
 
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-import Button from './components/Button/Button';
-
-import './nativewind-output';
+import Button from '@components/Button/button';
 
 export default () => (
   <SafeAreaProvider>

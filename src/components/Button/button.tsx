@@ -1,5 +1,5 @@
 import React, {FC, PropsWithChildren, useMemo} from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import {Pressable, Text} from 'react-native';
 
 import {ButtonBehavior, ButtonSize} from './Button.type';
 
@@ -64,12 +64,12 @@ const Button: FC<ButtonProps> = ({
   }, [behavior, isPrimary, size]);
 
   return (
-    <TouchableOpacity
+    <Pressable
       className={`${BASE_BUTTON_CLASSES} ${computedClasses}`}
       {...props}>
       {children}
-      <Text>{label}</Text>
-    </TouchableOpacity>
+      <Text className="font-black">{label}</Text>
+    </Pressable>
   );
 };
 

@@ -22,7 +22,43 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: '@src/**',
+            pattern: '@components/**',
+            group: 'internal',
+          },
+          {
+            pattern: '@assets/**',
+            group: 'internal',
+          },
+          {
+            pattern: '@contexts/**',
+            group: 'internal',
+          },
+          {
+            pattern: '@styles/**',
+            group: 'internal',
+          },
+          {
+            pattern: '@hooks/**',
+            group: 'internal',
+          },
+          {
+            pattern: '@modules/**',
+            group: 'internal',
+          },
+          {
+            pattern: '@navigators/**',
+            group: 'internal',
+          },
+          {
+            pattern: '@screens/**',
+            group: 'internal',
+          },
+          {
+            pattern: '@app-types/**',
+            group: 'internal',
+          },
+          {
+            pattern: '@utils/**',
             group: 'internal',
           },
         ],

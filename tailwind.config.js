@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-const nativewind = require('nativewind/tailwind/native');
 
 module.exports = {
   content: ['./App.{js,jsx,ts,tsx}', './src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: ['class', '[data-mode="dark"]'],
   theme: {
     extend: {
       colors: {
@@ -33,5 +31,4 @@ module.exports = {
       },
     },
   },
-  plugins: [nativewind()],
 };
